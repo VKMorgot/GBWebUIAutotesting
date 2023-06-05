@@ -62,6 +62,7 @@ public class SignOutTestApp {
             new Actions(driver)
                     .moveToElement(userIcon)
                     .perform();
+            new WebDriverWait(driver, Duration.ofSeconds(1)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".s-header-sub-list-item__link--logout")));
             WebElement logOutButton = driver.findElement(By.cssSelector(".s-header-sub-list-item__link--logout"));
             logOutButton.click();
 
