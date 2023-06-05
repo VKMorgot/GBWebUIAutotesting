@@ -2,7 +2,6 @@ package org.example.lesson3.homework;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -69,12 +68,12 @@ public class SignInTestApp {
             }
 
             // ввод логина и пароля
-            WebElement login_field = driver.findElement(By.id("user"));
-            login_field.sendKeys(LOGIN);
+            WebElement loginField = driver.findElement(By.id("user"));
+            loginField.sendKeys(LOGIN);
             WebElement pass_field = driver.findElement(By.id("lj_loginwidget_password"));
             pass_field.sendKeys(PASSWORD);
-            WebElement enter_button = driver.findElement(By.name("action:login"));
-            enter_button.click();
+            WebElement enterButtonAuth = driver.findElement(By.name("action:login"));
+            enterButtonAuth.click();
 
             // проверка, что пользователь авторизовался
             new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".s-header-item--user")));
